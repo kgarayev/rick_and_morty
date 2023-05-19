@@ -1,28 +1,17 @@
 import React, { Component } from "react";
-import axios from "axios";
-import Loading from "./components/Loading";
-import Simpsons from "./components/Simpsons";
-import "./App.css";
+import Character from "./components/Character";
 
 class App extends Component {
-  state = {};
-
-  async componentDidMount() {
-    const { data } = await axios.get(
-      `https://thesimpsonsquoteapi.glitch.me/quotes?count=50`
-    );
-    this.setState({ simpsons: data });
-  }
+  state = { charNumber: 6 };
 
   render() {
-    const { simpsons } = this.state;
-
-    if (!simpsons) return <Loading />;
-
     return (
       <>
-        <h1>Total no of liked chars #</h1>
-        <Simpsons simpsons={simpsons} />
+        <h1>Some Ricks and some Mortys</h1>
+        <h2>Ricks first, of course...</h2>
+        <Character number={this.state.charNumber} name={"rick"} />
+        <h2>...and now, Mortys</h2>
+        <Character number={this.state.charNumber} name={"morty"} />
       </>
     );
   }
