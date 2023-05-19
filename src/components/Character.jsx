@@ -16,33 +16,6 @@ class Character extends Component {
     this.setState({ name: data.results });
   }
 
-  //   randomList = () => {
-  //     let numbers = [];
-
-  //     for (let i = 0; i < 6; i++) {
-  //       let randomNumber = Math.floor(Math.random() * 20);
-  //       numbers.push(randomNumber);
-  //     }
-
-  //     return numbers;
-  //   };
-
-  //   randomiseState = () => {
-  //     let newState = [];
-  //     let numbers = this.randomList();
-  //     // console.log(numbers);
-  //     console.log(this.state.name);
-
-  //     for (number of numbers) {
-  //       let copiedItem = { ...this.state.name[number] };
-  //       console.log(copiedItem);
-  //       newState.push(copiedItem);
-  //     }
-
-  //     this.state.name = [...newState];
-  //     console.log(this.state.name);
-  //   };
-
   render() {
     const { name } = this.state;
 
@@ -51,9 +24,9 @@ class Character extends Component {
     // console.log(this.state.name);
 
     return (
-      <Type characterTypes={name} />
-
-      //   <img className={name} src={this.state.name.results[0].image} alt={name} />
+      <div className="typeContainer">
+        <Type characterTypes={name} number={this.props.number} />
+      </div>
     );
   }
 }

@@ -10,3 +10,44 @@
   display: flex;
   background-color: cadetblue;
 }
+
+.dead {
+  filter: grayscale(100%);
+}
+
+.type {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #f0e14a;
+  width: 12rem;
+  height: 19rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.name {
+}
+
+.typeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.nameContainer {
+  display: flex;
+}
+
+.typeText {
+  /* background-color: red; */
+}
+
+.name h2 {
+  padding: 0.75rem;
+}

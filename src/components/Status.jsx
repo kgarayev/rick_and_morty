@@ -3,7 +3,9 @@ import React, { Component } from "react";
 class Status extends Component {
   state = {};
   render() {
-    return <h3>Status</h3>;
+    const { status } = this.props;
+
+    return <h3>{status}</h3>;
   }
 }
 

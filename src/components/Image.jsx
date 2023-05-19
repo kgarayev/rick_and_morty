@@ -3,7 +3,9 @@ import React, { Component } from "react";
 class Image extends Component {
   state = {};
   render() {
-    return <h3>Image</h3>;
+    const { link, name, status } = this.props;
+
+    return <img className={status.toLowerCase()} src={link} alt={name} />;
   }
 }
 

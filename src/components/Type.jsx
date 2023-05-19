@@ -9,13 +9,13 @@ class Type extends Component {
   randomList = () => {
     let numbers = [];
 
-    do {
+    while (numbers.length < this.props.number) {
       let randomNumber = Math.floor(Math.random() * 20);
       if (numbers.includes(randomNumber)) {
         continue;
       }
       numbers.push(randomNumber);
-    } while (numbers.length < 6);
+    }
 
     return numbers;
   };
@@ -31,7 +31,6 @@ class Type extends Component {
     }
 
     this.state.types = [...listOfTypes];
-    // console.log(this.state.types);
   };
 
   render() {
@@ -44,11 +43,19 @@ class Type extends Component {
       <>
         {types.map((item, index) => {
           return (
-            <React.Fragment key={item.id}>
-              <Name name={item.name} key={item.name} />
-              <Image link={item.image} key={item.image} />
-              <Status status={item.status} key={item.created} />
-            </React.Fragment>
+            <div key={item.id} className="type">
+              <div className="typeText">
+                <Name name={item.name} key={item.name} />
+                <Status status={item.status} key={item.created} />
+              </div>
+
+              <Image
+                link={item.image}
+                name={item.name}
+                status={item.status}
+                key={item.image}
+              />
+            </div>
           );
         })}
       </>

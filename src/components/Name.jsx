@@ -2,8 +2,11 @@ import React, { Component } from "react";
 
 class Name extends Component {
   state = {};
+
   render() {
-    return <h3>Name</h3>;
+    const { name } = this.props;
+
+    return <h3>{name}</h3>;
   }
 }
 
