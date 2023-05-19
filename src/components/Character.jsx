@@ -14,7 +14,6 @@ class Character extends Component {
     );
 
     this.setState({ name: data.results });
-    this.randomiseState();
   }
 
   //   randomList = () => {

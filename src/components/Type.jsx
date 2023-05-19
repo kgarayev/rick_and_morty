@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import axios from "axios";
 
 class Type extends Component {
   state = {};
 
   render() {
-    return <h5>Hey</h5>;
+    return <h5>hello</h5>;
   }
 }
 
