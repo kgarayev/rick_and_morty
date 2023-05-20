@@ -15,12 +15,12 @@
   filter: grayscale(100%);
 }
 
-.type {
+.card {
   margin: 1rem;
   padding: 1rem;
   background-color: #f0e14a;
   width: 12rem;
-  height: 19rem;
+  height: 22rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -38,10 +38,13 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  /* border: 0.1rem black solid; */
 }
 
 .nameContainer {
-  display: flex;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .typeText {

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import Name from "./Name";
-import Status from "./Status";
-import Image from "./Image";
+import Card from "./Card";
 
 class Type extends Component {
   state = {};
@@ -42,21 +40,7 @@ class Type extends Component {
     return (
       <>
         {types.map((item, index) => {
-          return (
-            <div key={item.id} className="type">
-              <div className="typeText">
-                <Name name={item.name} key={item.name} />
-                <Status status={item.status} key={item.created} />
-              </div>
-
-              <Image
-                link={item.image}
-                name={item.name}
-                status={item.status}
-                key={item.image}
-              />
-            </div>
-          );
+          return <Card item={item} key={item.id} />;
         })}
       </>
     );
