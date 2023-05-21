@@ -6,15 +6,6 @@
   width: 150px;
 }
 
-.characterContainer {
-  display: flex;
-  background-color: cadetblue;
-}
-
-.dead {
-  filter: grayscale(100%);
-}
-
 .card {
   margin: 1rem;
   padding: 1rem;
@@ -25,6 +16,15 @@
   flex-direction: column;
   justify-content: flex-end;
   gap: 1rem;
+}
+
+.dead {
+  filter: grayscale(85%);
+  background-color: rgb(212, 212, 212);
+}
+
+.unknown {
+  background-color: #ece7a9;
 }
 
 .container {
@@ -67,8 +67,5 @@
 
 .liked {
   background-color: #e4a788;
-}
-
-.card div {
-  /* border: 0.1rem black solid; */
+  filter: grayscale(0%);
 }

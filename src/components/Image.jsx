@@ -5,7 +5,7 @@ class Image extends Component {
   render() {
     const { link, name, status } = this.props;
 
-    return <img className={status.toLowerCase()} src={link} alt={name} />;
+    return <img className={status} src={link} alt={name} />;
   }
 }
 

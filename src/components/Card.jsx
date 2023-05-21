@@ -19,25 +19,47 @@ class Card extends Component {
   };
 
   onDelete = () => {
+    const { index } = this.props;
+    console.log("deleted");
+
     this.setState({ deleted: !this.state.deleted });
+
+    // if (this.state.deleted) {
+    //   this.props.deleteCard(this.props.item.id);
+    // }
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.deleted) {
+      this.props.deleteCard(this.props.item.id);
+    }
+    console.log("state updated");
+  }
+
   render() {
-    const { name, status, created, image } = this.props.item;
+    const { name, status, created, image, id } = this.props.item;
     const { like, deleted } = this.state;
 
     return (
-      <div className={`card ${like} ${deleted}`}>
+      <div
+        className={`card ${like} ${deleted} ${status.toLowerCase()}`}
+        id={id}
+      >
         <div className="typeText">
           <Name name={name} key={name} />
-          <Status status={status} key={created} />
+          <Status status={status.toLowerCase()} key={created} />
           <div className="actions">
             <Like onLikeToggle={this.onLikeToggle} like={like} />
             <Delete onDelete={this.onDelete} />
           </div>
         </div>
 
-        <Image link={image} name={name} status={status} key={image} />
+        <Image
+          link={image}
+          name={name}
+          status={status.toLowerCase()}
+          key={image}
+        />
       </div>
     );
   }

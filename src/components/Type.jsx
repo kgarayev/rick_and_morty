@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Card from "./Card";
 
 class Type extends Component {
-  state = { types: [] };
+  state = { types: [], deletedIndex: [] };
 
   randomList = () => {
     let numbers = [];
@@ -31,6 +31,11 @@ class Type extends Component {
     this.state.types = [...listOfTypes];
   };
 
+  deleteCard = (index) => {
+    this.setState({ deletedIndex: [...this.state.deletedIndex, index] });
+    console.log(this.state.deletedIndex);
+  };
+
   render() {
     this.randomTypes();
 
@@ -40,7 +45,14 @@ class Type extends Component {
     return (
       <>
         {types.map((item, index) => {
-          return <Card item={item} key={item.id} />;
+          return (
+            <Card
+              item={item}
+              index={types.indexOf(item)}
+              key={item.id}
+              deleteCard={this.deleteCard}
+            />
+          );
         })}
       </>
     );
