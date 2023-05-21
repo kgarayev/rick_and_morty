@@ -23,17 +23,13 @@ class Card extends Component {
     console.log("deleted");
 
     this.setState({ deleted: !this.state.deleted });
-
-    // if (this.state.deleted) {
-    //   this.props.deleteCard(this.props.item.id);
-    // }
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.deleted) {
+    if (this.state.deleted !== prevState.deleted && this.state.deleted) {
       this.props.deleteCard(this.props.item.id);
+      console.log("state updated");
     }
-    console.log("state updated");
   }
 
   render() {
@@ -46,6 +42,7 @@ class Card extends Component {
         id={id}
       >
         <div className="typeText">
+          <p>{id}</p>
           <Name name={name} key={name} />
           <Status status={status.toLowerCase()} key={created} />
           <div className="actions">

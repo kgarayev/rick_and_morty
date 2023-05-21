@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Card from "./Card";
 
 class Type extends Component {
-  state = { types: [], deletedIndex: [] };
+  state = { types: [], deletedIndex: undefined };
 
   randomList = () => {
     let numbers = [];
@@ -28,17 +28,21 @@ class Type extends Component {
       listOfTypes.push(copiedItem);
     }
 
-    this.state.types = [...listOfTypes];
+    this.setState({ types: [...listOfTypes] });
   };
 
-  deleteCard = (index) => {
-    this.setState({ deletedIndex: [...this.state.deletedIndex, index] });
-    console.log(this.state.deletedIndex);
+  deleteCard = (id) => {
+    console.log(id);
+    this.setState({ deletedIndex: id }, () => {
+      console.log(this.state);
+    });
   };
+
+  componentDidMount() {
+    this.randomTypes();
+  }
 
   render() {
-    this.randomTypes();
-
     const { types } = this.state;
     console.log(types);
 

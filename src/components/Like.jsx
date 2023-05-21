@@ -7,7 +7,7 @@ class Like extends Component {
 
     return (
       <button onClick={onLikeToggle}>
-        {like === "liked" ? "Liked" : "Not Liked"}
+        {like === "liked" ? "Liked" : "Like"}
       </button>
     );
   }
