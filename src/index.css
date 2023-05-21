@@ -55,8 +55,9 @@ h2 {
   display: flex;
   justify-content: center;
   /* width: 70%; */
-  margin: auto;
+  /* margin: auto; */
   margin-top: 2rem;
+  margin-bottom: 1rem;
   /* border: 0.2rem solid #44281d; */
 }
 

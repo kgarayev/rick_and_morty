@@ -42,7 +42,6 @@ class Card extends Component {
         id={id}
       >
         <div className="typeText">
-          <p>{id}</p>
           <Name name={name} key={name} />
           <Status status={status.toLowerCase()} key={created} />
           <div className="actions">

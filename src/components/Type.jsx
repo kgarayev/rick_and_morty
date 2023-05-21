@@ -34,8 +34,20 @@ class Type extends Component {
   deletedId = (id) => {
     console.log(id);
     this.setState({ deletedIndex: id }, () => {
-      console.log(this.state);
+      this.deleteCard(id);
     });
+  };
+
+  deleteCard = (id) => {
+    const { types } = this.state;
+
+    const filteredTypes = types.filter((item) => {
+      return item.id !== id;
+    });
+
+    console.log(filteredTypes);
+
+    this.setState({ types: filteredTypes });
   };
 
   componentDidMount() {
