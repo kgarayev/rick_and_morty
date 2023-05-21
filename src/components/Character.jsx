@@ -6,6 +6,7 @@ import Type from "./Type";
 class Character extends Component {
   state = {};
 
+  // fetching api data
   async componentDidMount() {
     const name = this.props.name;
 
@@ -21,11 +22,13 @@ class Character extends Component {
 
     if (!name) return <Loading />;
 
-    // console.log(this.state.name);
-
     return (
       <div className="typeContainer">
-        <Type characterTypes={name} number={this.props.number} />
+        <Type
+          characterTypes={name}
+          number={this.props.number}
+          updateLiked={this.props.updateLiked}
+        />
       </div>
     );
   }

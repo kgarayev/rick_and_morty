@@ -29,8 +29,6 @@ body {
   justify-content: center;
   justify-items: center;
   margin: 0;
-  /* width: 99%; */
-  display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -41,7 +39,6 @@ body {
 h1 {
   font-size: 2.5rem;
   line-height: 1.1;
-  /* border: #1a1a1a solid 0.1rem; */
   display: flex;
   justify-content: center;
   margin: 0;
@@ -54,11 +51,8 @@ h2 {
   height: 3rem;
   display: flex;
   justify-content: center;
-  /* width: 70%; */
-  /* margin: auto; */
   margin-top: 2rem;
   margin-bottom: 1rem;
-  /* border: 0.2rem solid #44281d; */
 }
 
 h3 {
@@ -74,8 +68,6 @@ h4 {
 }
 
 img {
-  /* width: 90%; */
-  /* margin: 0.25rem; */
   border: 0.2rem solid #44281d;
 }
 

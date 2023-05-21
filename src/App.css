@@ -32,23 +32,21 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 100vh;
+  height: 100%;
 }
 
 .name {
   display: flex;
   flex-direction: column;
-  /* align-items: baseline; */
-  justify-content: flex-start;
-  /* border: 0.2rem solid #44281d; */
+  align-items: center;
+  justify-content: start;
 }
 
 .typeContainer {
   display: flex;
   flex-wrap: wrap;
-  /* align-items: flex-start;
-  justify-content: flex-start; */
-  /* border: 0.1rem black solid; */
+  align-items: center;
+  justify-content: center;
 }
 
 .nameContainer {
@@ -64,10 +62,28 @@
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
-  /* background-color: red; */
 }
 
 .liked {
   background-color: #e4a788;
   filter: grayscale(0%);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.likeCount {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.facts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-bottom: 0.25rem;
 }

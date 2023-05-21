@@ -4,6 +4,7 @@ import Card from "./Card";
 class Type extends Component {
   state = { types: [], deletedIndex: undefined };
 
+  // generate a list a given length of unique random numbers between 0 and 19
   randomList = () => {
     let numbers = [];
 
@@ -18,6 +19,7 @@ class Type extends Component {
     return numbers;
   };
 
+  // create a list of types using the random list of numbers
   randomTypes = () => {
     let listOfTypes = [];
     let numbers = this.randomList();
@@ -31,6 +33,7 @@ class Type extends Component {
     this.setState({ types: [...listOfTypes] });
   };
 
+  // identify the id of the deleted card/character
   deletedId = (id) => {
     console.log(id);
     this.setState({ deletedIndex: id }, () => {
@@ -38,6 +41,7 @@ class Type extends Component {
     });
   };
 
+  // delete the card/character
   deleteCard = (id) => {
     const { types } = this.state;
 
@@ -50,6 +54,7 @@ class Type extends Component {
     this.setState({ types: filteredTypes });
   };
 
+  // call the randomtypes function
   componentDidMount() {
     this.randomTypes();
   }
@@ -67,6 +72,7 @@ class Type extends Component {
               index={types.indexOf(item)}
               key={item.id}
               deletedId={this.deletedId}
+              updateLiked={this.props.updateLiked}
             />
           );
         })}
