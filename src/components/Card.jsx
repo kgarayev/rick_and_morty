@@ -27,7 +27,7 @@ class Card extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.deleted !== prevState.deleted && this.state.deleted) {
-      this.props.deleteCard(this.props.item.id);
+      this.props.deletedId(this.props.item.id);
       console.log("state updated");
     }
   }

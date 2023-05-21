@@ -31,7 +31,7 @@ class Type extends Component {
     this.setState({ types: [...listOfTypes] });
   };
 
-  deleteCard = (id) => {
+  deletedId = (id) => {
     console.log(id);
     this.setState({ deletedIndex: id }, () => {
       console.log(this.state);
@@ -54,7 +54,7 @@ class Type extends Component {
               item={item}
               index={types.indexOf(item)}
               key={item.id}
-              deleteCard={this.deleteCard}
+              deletedId={this.deletedId}
             />
           );
         })}
