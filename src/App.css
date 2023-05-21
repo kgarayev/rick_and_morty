@@ -20,10 +20,11 @@
   padding: 1rem;
   background-color: #f0e14a;
   width: 12rem;
-  height: 22rem;
+  height: 23rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 .container {
@@ -31,6 +32,11 @@
 }
 
 .name {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  /* border: 0.2rem solid #44281d; */
 }
 
 .typeContainer {
@@ -48,9 +54,21 @@
 }
 
 .typeText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
   /* background-color: red; */
 }
 
 .name h2 {
   padding: 0.75rem;
+}
+
+.liked {
+  background-color: #e4a788;
+}
+
+.card div {
+  /* border: 0.1rem black solid; */
 }

@@ -54,6 +54,10 @@ h2 {
   height: 3rem;
   display: flex;
   justify-content: center;
+  /* width: 70%; */
+  margin: auto;
+  margin-top: 2rem;
+  /* border: 0.2rem solid #44281d; */
 }
 
 h3 {

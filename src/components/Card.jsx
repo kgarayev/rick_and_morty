@@ -6,26 +6,35 @@ import Like from "./Like";
 import Delete from "./Delete";
 
 class Card extends Component {
-  state = { like: false };
+  state = { like: "disliked", deleted: false };
 
   onLikeToggle = () => {
-    this.setState({ like: !this.state.like });
+    const { like } = this.state;
+
+    if (like === "disliked") {
+      this.setState({ like: "liked" });
+    } else {
+      this.setState({ like: "disliked" });
+    }
+  };
+
+  onDelete = () => {
+    this.setState({ deleted: !this.state.deleted });
   };
 
   render() {
     const { name, status, created, image } = this.props.item;
-    const { like } = this.state;
+    const { like, deleted } = this.state;
 
     return (
-      <div className={`card ${like}`}>
+      <div className={`card ${like} ${deleted}`}>
         <div className="typeText">
           <Name name={name} key={name} />
           <Status status={status} key={created} />
-        </div>
-
-        <div>
-          <Like onLikeToggle={this.onLikeToggle} like={like} />
-          <Delete />
+          <div className="actions">
+            <Like onLikeToggle={this.onLikeToggle} like={like} />
+            <Delete onDelete={this.onDelete} />
+          </div>
         </div>
 
         <Image link={image} name={name} status={status} key={image} />

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Card from "./Card";
 
 class Type extends Component {
-  state = {};
+  state = { types: [] };
 
   randomList = () => {
     let numbers = [];

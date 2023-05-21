@@ -6,7 +6,9 @@ class Like extends Component {
     const { like, onLikeToggle } = this.props;
 
     return (
-      <button onClick={onLikeToggle}>{like ? "Liked" : "Not Liked"}</button>
+      <button onClick={onLikeToggle}>
+        {like === "liked" ? "Liked" : "Not Liked"}
+      </button>
     );
   }
 }
