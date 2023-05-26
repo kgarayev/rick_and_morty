@@ -54,14 +54,22 @@ class Type extends Component {
     this.setState({ types: filteredTypes });
   };
 
-  // call the randomtypes function
+  // call the randomtypes function when component mounts
   componentDidMount() {
     this.randomTypes();
   }
 
+  // call the randomtypes function when component updates
+  componentDidUpdate(prevProps) {
+    if (this.props.number !== prevProps.number) {
+      console.log("Numbers prop has been updated");
+      this.randomTypes();
+      // Perform additional actions or logic here
+    }
+  }
+
   render() {
     const { types } = this.state;
-    console.log(types);
 
     return (
       <>

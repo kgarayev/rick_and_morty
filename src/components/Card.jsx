@@ -14,10 +14,12 @@ class Card extends Component {
 
     if (like === "disliked") {
       this.setState({ like: "liked" }, () => {
+        // this.props.updateLiked(like);
         this.props.updateLiked("liked");
       });
     } else {
       this.setState({ like: "disliked" }, () => {
+        // this.props.updateLiked(like);
         this.props.updateLiked("disliked");
       });
     }
