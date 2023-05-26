@@ -63,7 +63,7 @@ class App extends Component {
         <>
           <h1>Some Ricks and some Mortys</h1>
 
-          <div class="choose">
+          <div className="choose">
             <h3>How many of each would you like to see?</h3>
             <select
               onChange={this.changeNumber}
@@ -82,7 +82,7 @@ class App extends Component {
       <>
         <h1>Some Ricks and some Mortys</h1>
 
-        <div class="choose">
+        <div className="choose">
           <h3>How many of each would you like to see?</h3>
           <select
             onChange={this.changeNumber}
