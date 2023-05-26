@@ -100,7 +100,7 @@ class App extends Component {
 
         <div className="nameContainer">
           <div className="name">
-            <h2>Ricks first, of course...</h2>
+            <h2>Ricks...</h2>
             <Character
               number={charNumber}
               name={"rick"}
@@ -109,7 +109,7 @@ class App extends Component {
           </div>
 
           <div className="name">
-            <h2>...and now, Mortys</h2>
+            <h2>...Mortys</h2>
             <Character
               number={charNumber}
               name={"morty"}

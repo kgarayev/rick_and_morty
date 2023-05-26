@@ -51,8 +51,9 @@ h2 {
   height: 3rem;
   display: flex;
   justify-content: center;
+  text-align: center;
+  margin: auto;
   margin-top: 2rem;
-  margin-bottom: 1rem;
 }
 
 h3 {
