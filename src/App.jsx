@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Character from "./components/Character";
 import "./App.css";
+import Controls from "./components/Controls";
 
 class App extends Component {
   state = { charNumber: "Select", numLiked: 0 };
@@ -21,9 +22,7 @@ class App extends Component {
 
   // change the charnumber
   changeNumber = (e) => {
-    this.setState({ charNumber: e.target.value }, () => {
-      console.log(this.state);
-    });
+    this.setState({ charNumber: e.target.value }, () => {});
   };
 
   selectList = () => {
@@ -49,8 +48,6 @@ class App extends Component {
         );
       }),
     ];
-
-    console.log(arr);
 
     return arr;
   };
@@ -101,6 +98,7 @@ class App extends Component {
         <div className="nameContainer">
           <div className="name">
             <h2>Ricks...</h2>
+
             <Character
               number={charNumber}
               name={"rick"}
@@ -110,6 +108,7 @@ class App extends Component {
 
           <div className="name">
             <h2>...Mortys</h2>
+
             <Character
               number={charNumber}
               name={"morty"}

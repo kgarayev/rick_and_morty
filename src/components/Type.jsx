@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Card from "./Card";
+import Controls from "./Controls";
 
 class Type extends Component {
   state = { types: [], deletedIndex: undefined };
@@ -54,6 +55,48 @@ class Type extends Component {
     this.setState({ types: filteredTypes });
   };
 
+  // record the input of the sort button in the state
+  onSortInput = (e) => {
+    this.setState({ sortInput: e.target.value });
+  };
+
+  // record the input of the search input button in the state
+  onSearchInput = (e) => {
+    this.setState({ searchInput: e.target.value });
+  };
+
+  // filter the list based on the filter or sort
+  getFilteredList = () => {
+    let { types, sortInput, searchInput } = this.state;
+
+    let filteredList = [...types];
+
+    //filter by serch
+    if (searchInput) {
+      if (searchInput === "All") {
+      } else {
+        filteredList = filteredList.filter((item) => {
+          if (item.status.toLowerCase().includes(searchInput.toLowerCase())) {
+            return true;
+          }
+        });
+      }
+    }
+
+    if (sortInput === "asc") {
+      filteredList.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+      });
+    }
+    if (sortInput === "desc") {
+      filteredList.sort((a, b) => {
+        return b.name.localeCompare(a.name);
+      });
+    }
+
+    return filteredList;
+  };
+
   // call the randomtypes function when component mounts
   componentDidMount() {
     this.randomTypes();
@@ -62,7 +105,6 @@ class Type extends Component {
   // call the randomtypes function when component updates
   componentDidUpdate(prevProps) {
     if (this.props.number !== prevProps.number) {
-      console.log("Numbers prop has been updated");
       this.randomTypes();
       // Perform additional actions or logic here
     }
@@ -70,20 +112,28 @@ class Type extends Component {
 
   render() {
     const { types } = this.state;
+    let finalList = this.getFilteredList();
 
     return (
       <>
-        {types.map((item, index) => {
-          return (
-            <Card
-              item={item}
-              index={types.indexOf(item)}
-              key={item.id}
-              deletedId={this.deletedId}
-              updateLiked={this.props.updateLiked}
-            />
-          );
-        })}
+        <Controls
+          onSortInput={this.onSortInput}
+          onSearchInput={this.onSearchInput}
+        />
+
+        <div className="typeContainer">
+          {finalList.map((item, index) => {
+            return (
+              <Card
+                item={item}
+                index={types.indexOf(item)}
+                key={item.id}
+                deletedId={this.deletedId}
+                updateLiked={this.props.updateLiked}
+              />
+            );
+          })}
+        </div>
       </>
     );
   }

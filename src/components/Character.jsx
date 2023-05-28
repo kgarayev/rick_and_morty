@@ -23,13 +23,13 @@ class Character extends Component {
     if (!name) return <Loading />;
 
     return (
-      <div className="typeContainer">
+      <>
         <Type
           characterTypes={name}
           number={this.props.number}
           updateLiked={this.props.updateLiked}
         />
-      </div>
+      </>
     );
   }
 }
