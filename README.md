@@ -6,7 +6,22 @@ This is a frontend-only webpage created using React. It makes a simple API call 
 
 ## :gear: Functionality
 
-The webpage allows users to like the characters or delete them.
+### Character Selection
+Users can choose the number of characters they want to view, with a maximum limit of 20. This feature allows users to customize the number of characters displayed on the webpage according to their preference.
+
+### Liking Characters
+Users have the ability to like or show appreciation for specific characters on the webpage. By liking a character, users can mark them as their favorites and interact with them in a personalized manner.
+
+### Deleting Characters
+The webpage allows users to delete characters from the display. This feature enables users to remove unwanted characters or declutter the view, creating a cleaner and more focused user experience.
+
+### Filtering by Status
+Users can filter the characters based on their status. This functionality lets users narrow down the view to display characters with specific statuses, such as "Alive," "Dead," or "Unknown." Filtering by status provides users with the ability to focus on specific subsets of characters.
+
+### Alphabetical Sorting
+The webpage supports alphabetical sorting of characters. Users can choose to sort the characters in ascending or descending order based on their names. This sorting feature enhances usability by allowing users to easily locate characters and navigate through the list more efficiently.
+
+By combining these features, the webpage offers users a customizable and interactive experience for exploring and managing a collection of characters. Users can adjust the number of characters displayed, favorite their preferred characters, delete unwanted ones, filter characters by status, and sort them alphabetically to tailor their viewing experience according to their preferences.
 
 ## :bust_in_silhouette: Author
 
