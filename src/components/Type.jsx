@@ -65,6 +65,12 @@ class Type extends Component {
     this.setState({ searchInput: e.target.value });
   };
 
+  // reset the state values for filter and search
+  onReset = () => {
+    console.log("hi");
+    this.setState({ searchInput: undefined, sortInput: undefined });
+  };
+
   // filter the list based on the filter or sort
   getFilteredList = () => {
     let { types, sortInput, searchInput } = this.state;
@@ -119,6 +125,7 @@ class Type extends Component {
         <Controls
           onSortInput={this.onSortInput}
           onSearchInput={this.onSearchInput}
+          onReset={this.onReset}
         />
 
         <div className="typeContainer">

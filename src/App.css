@@ -121,3 +121,41 @@ select:focus-visible {
 select:hover {
   border-color: #44281d;
 }
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.name select {
+  font-size: 1.25rem;
+  width: 6.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.25rem;
+  padding-left: 0.5rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: white;
+}
+
+.name button {
+  font-size: 1.25rem;
+  width: 6.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.25rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: white;
+}
