@@ -3,11 +3,15 @@ import React, { Component } from "react";
 class Like extends Component {
   state = {};
   render() {
-    const { like, onLikeToggle } = this.props;
+    const { like, onLikeToggle, id, liked } = this.props;
 
     return (
-      <button onClick={onLikeToggle}>
-        {like === "liked" ? "Liked" : "Like"}
+      <button
+        onClick={() => {
+          onLikeToggle(id);
+        }}
+      >
+        {liked ? "Liked" : "Like"}
       </button>
     );
   }

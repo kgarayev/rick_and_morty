@@ -116,12 +116,36 @@ class Type extends Component {
     }
   }
 
+  onLikeToggle = (id) => {
+    const { types } = this.state;
+
+    const indexOf = types.findIndex((item) => {
+      return item.id === id;
+    });
+
+    const updatedList = [...types];
+
+    //invert if liked or not liked
+    updatedList[indexOf].liked = !updatedList[indexOf].liked;
+    this.setState({ types: [...updatedList] });
+  };
+
   render() {
     const { types } = this.state;
     let finalList = this.getFilteredList();
 
+    //calculate the total
+    let total = 0;
+    types.forEach((item) => {
+      if (item.liked) total++;
+    });
+
     return (
       <>
+        <div className="likeCount">
+          <h3>Number of liked characters: {total}</h3>
+        </div>
+
         <Controls
           onSortInput={this.onSortInput}
           onSearchInput={this.onSearchInput}
@@ -137,6 +161,7 @@ class Type extends Component {
                 key={item.id}
                 deletedId={this.deletedId}
                 updateLiked={this.props.updateLiked}
+                onLikeToggle={this.onLikeToggle}
               />
             );
           })}

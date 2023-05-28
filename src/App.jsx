@@ -6,23 +6,9 @@ import Controls from "./components/Controls";
 class App extends Component {
   state = { charNumber: "Select", numLiked: 0 };
 
-  // update state when a character is liked
-  updateLiked = (choice) => {
-    const { numLiked } = this.state;
-
-    if (choice === "liked") {
-      this.setState({ numLiked: numLiked + 1 });
-    } else {
-      if (numLiked === 0) {
-        return;
-      }
-      this.setState({ numLiked: numLiked - 1 });
-    }
-  };
-
   // change the charnumber
   changeNumber = (e) => {
-    this.setState({ charNumber: e.target.value }, () => {});
+    this.setState({ charNumber: e.target.value, numLiked: 0 });
   };
 
   selectList = () => {
@@ -89,10 +75,6 @@ class App extends Component {
           >
             {this.selectList()}
           </select>
-        </div>
-
-        <div className="likeCount">
-          <h3>Number of liked characters: {this.state.numLiked}</h3>
         </div>
 
         <div className="nameContainer">
