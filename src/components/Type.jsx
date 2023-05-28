@@ -112,7 +112,6 @@ class Type extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.number !== prevProps.number) {
       this.randomTypes();
-      // Perform additional actions or logic here
     }
   }
 
@@ -134,7 +133,7 @@ class Type extends Component {
     const { types } = this.state;
     let finalList = this.getFilteredList();
 
-    //calculate the total
+    //calculate the total liked
     let total = 0;
     types.forEach((item) => {
       if (item.liked) total++;
@@ -160,7 +159,6 @@ class Type extends Component {
                 index={types.indexOf(item)}
                 key={item.id}
                 deletedId={this.deletedId}
-                updateLiked={this.props.updateLiked}
                 onLikeToggle={this.onLikeToggle}
               />
             );

@@ -6,24 +6,7 @@ import Like from "./Like";
 import Delete from "./Delete";
 
 class Card extends Component {
-  state = { like: "disliked", deleted: false };
-
-  // toggle between liked and disliked when the button is clicked and also trigger the update Liked function in the App component
-  // onLikeToggle = () => {
-  //   const { like } = this.state;
-
-  //   if (like === "disliked") {
-  //     this.setState({ like: "liked" }, () => {
-  //       // this.props.updateLiked(like);
-  //       this.props.updateLiked("liked");
-  //     });
-  //   } else {
-  //     this.setState({ like: "disliked" }, () => {
-  //       // this.props.updateLiked(like);
-  //       this.props.updateLiked("disliked");
-  //     });
-  //   }
-  // };
+  state = { deleted: false };
 
   // delete a character
   onDelete = () => {
@@ -41,7 +24,7 @@ class Card extends Component {
 
   render() {
     const { name, status, created, image, id, liked } = this.props.item;
-    const { like, deleted } = this.state;
+    const { deleted } = this.state;
 
     return (
       <div
@@ -58,7 +41,6 @@ class Card extends Component {
           <div className="actions">
             <Like
               onLikeToggle={this.props.onLikeToggle}
-              like={like}
               id={id}
               liked={liked}
             />

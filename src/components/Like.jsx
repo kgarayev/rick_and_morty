@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Like extends Component {
   state = {};
   render() {
-    const { like, onLikeToggle, id, liked } = this.props;
+    const { onLikeToggle, id, liked } = this.props;
 
     return (
       <button

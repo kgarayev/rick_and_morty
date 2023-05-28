@@ -78,7 +78,12 @@
 .likeCount {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.likeCount h3 {
+  text-align: center;
 }
 
 .facts {

@@ -4,13 +4,14 @@ import "./App.css";
 import Controls from "./components/Controls";
 
 class App extends Component {
-  state = { charNumber: "Select", numLiked: 0 };
+  state = { charNumber: "Select" };
 
   // change the charnumber
   changeNumber = (e) => {
-    this.setState({ charNumber: e.target.value, numLiked: 0 });
+    this.setState({ charNumber: e.target.value });
   };
 
+  // create a select list
   selectList = () => {
     let newList = [];
 
@@ -41,6 +42,7 @@ class App extends Component {
   render() {
     const { charNumber } = this.state;
 
+    //  conditional rendering
     if (charNumber === "Select") {
       return (
         <>
@@ -81,21 +83,13 @@ class App extends Component {
           <div className="name">
             <h2>Ricks...</h2>
 
-            <Character
-              number={charNumber}
-              name={"rick"}
-              updateLiked={this.updateLiked}
-            />
+            <Character number={charNumber} name={"rick"} />
           </div>
 
           <div className="name">
             <h2>...Mortys</h2>
 
-            <Character
-              number={charNumber}
-              name={"morty"}
-              updateLiked={this.updateLiked}
-            />
+            <Character number={charNumber} name={"morty"} />
           </div>
         </div>
       </>

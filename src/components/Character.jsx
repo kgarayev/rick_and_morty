@@ -24,11 +24,7 @@ class Character extends Component {
 
     return (
       <>
-        <Type
-          characterTypes={name}
-          number={this.props.number}
-          updateLiked={this.props.updateLiked}
-        />
+        <Type characterTypes={name} number={this.props.number} />
       </>
     );
   }
