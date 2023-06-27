@@ -4,6 +4,16 @@
 
 This is a frontend-only webpage created using React. It makes a simple API call to the Rick and Morty API and displays some selected data to the user.
 
+## :computer: Tech Used
+
+- Programming Languages: JavaScript
+- Frameworks: React.js
+- 3rd Party Libraries: Axios
+- Web Development: HTML, CSS
+- Version Control: Git
+- API: Rick & Morty API
+  
+
 ## :gear: Functionality
 
 #### :1234: Character Selection
