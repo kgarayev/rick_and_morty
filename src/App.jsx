@@ -14,6 +14,7 @@ class App extends Component {
   // create a select list
   selectList = () => {
     let newList = [];
+    let selectedItems = [];
 
     for (var i = 1; i <= 20; i++) {
       newList.push(i);
