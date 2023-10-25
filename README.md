@@ -2,7 +2,7 @@
 
 ## :book: Overview
 
-This is a frontend-only webpage created using React. It makes a simple API call to the Rick and Morty API and displays some selected data to the user.
+This is a web app created using React. It makes a simple API call to the Rick and Morty API and displays some selected data to the user.
 
 ## :computer: Tech Used
 
