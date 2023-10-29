@@ -2,12 +2,13 @@
 
 ## :book: Overview
 
-This is a web app created using React. It makes a simple API call to the Rick and Morty API and displays some selected data to the user.
+This is a web app created using React and Node. 
 
 ## :computer: Tech Used
 
 - Programming Languages: JavaScript
-- Frameworks: React.js
+- Frameworks: React.js, Node.js, Express
+- Database: MySQL
 - 3rd Party Libraries: Axios
 - Web Development: HTML, CSS
 - Version Control: Git
